@@ -1,12 +1,44 @@
 <!DOCTYPE html>
-
 <html>
+  <head>
+    <script type="text/javascript" src="App.js"></script>
+  </head>
+
   <h1>Welcome to the SCE's Financial Advising App</h1>
   <p></p>
-  <body>
-    <input type="text" id="minutes" value="mins" />
-    <input type="text" id="seconds" value="secs" />
-    <input type="text" id="sybol" value="Symbol" />
-    <button onclick="FetchStonkInfo()">Seek</button>
-  </body>
+  <span>
+    <input type="text" id="min" value="mins" />
+    <input type="text" id="sec" value="secs" />
+    <input type="text" id="symbol" value="AAPL" />
+    <button
+      onclick="FetchStonkInfo( 
+       document.getElementById('symbol').value , 
+       document.getElementById('min').value, 
+       document.getElementById('sec').value)"
+    >
+      Seek
+    </button>
+  </span>
+
+  <div></div>
+
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+
+  <table id="myTable" hidden>
+    <tr>
+      <th>Open Price</th>
+      <th>High Price</th>
+      <th>Low Price</th>
+      <th>Current Price</th>
+      <th>Previous Close Price</th>
+      <th>Time</th>
+    </tr>
+    <tbody></tbody>
+  </table>
 </html>
