@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="App.js"></script>
+  </head>
+
+  <h1>Welcome to the SCE's Financial Advising App</h1>
+  <p></p>
+  <div>
+    <input type="text" id="min" value="mins" />
+    <input type="text" id="sec" value="secs" />
+    <input type="text" id="symbol" value="AAPL" />
+
+    <h2>How Often Do You Want The Price To Be Fetched?</h2>
+
+    <table id="topTable">
+      <tr>
+        <th>Minutes</th>
+        <th>Seconds</th>
+        <th>Ticker</th>
+      </tr>
+      <tr>
+        <th><input type="text" id="min" value="0" /></th>
+        <th><input type="text" id="sec" value="1" /></th>
+        <th><input type="text" id="symbol" value="AAPL" /></th>
+      </tr>
+    </table>
+  </div>
+
+  <!--<input type="text" id="min" value="mins" /> -->
+  <!--<input type="text" id="sec" value="secs" />-->
+  <!--<input type="text" id="symbol" value="AAPL" />-->
+
+  <button
+    onclick="FetchStockInfo( 
+       document.getElementById('symbol').value , 
+       document.getElementById('min').value, 
+       document.getElementById('sec').value)"
+  >
+    Seek
+  </button>
+
+  <div></div>
+
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+
+  <table id="myTable" hidden>
+    <tr>
+      <th>Open Price</th>
+      <th>High Price</th>
+      <th>Low Price</th>
+      <th>Current Price</th>
+      <th>Previous Close Price</th>
+      <th>Time</th>
+    </tr>
+    <tbody></tbody>
+  </table>
+</html>
